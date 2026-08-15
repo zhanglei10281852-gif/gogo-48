@@ -147,7 +147,6 @@ func EventJSON(events []model.Event) ([]byte, error) {
 	for i := range events {
 		copy[i] = events[i].Clone()
 	}
-	model.SortEvents(copy)
 	data, err := json.MarshalIndent(copy, "", "  ")
 	if err != nil {
 		return nil, err
